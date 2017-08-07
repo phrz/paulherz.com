@@ -16,9 +16,11 @@ layout: default
 				<span itemprop="name">{{ post.author }}</span>
 			</span>
 			{% endif %}
-			<time class="post-date" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-				{{ post.date | date: "%Y-%m-%d %H:%M" }}
+			{% if page.date %}
+			<time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+				{{ page.date | date: "%Y-%m-%d %H:%M" }}
 			</time>
+			{% endif %}
 		</p><!-- .blog-article-meta -->
 	</header>
 	{{ post.content }}
