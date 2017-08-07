@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% for post in site.posts %}
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			<a href="{{ post.url | relative_url }}" class="subtle-link">{{ post.title | escape }}</a>
+		</h1>
+		<p class="post-meta">
+			{% if post.author %}
+			<span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<span itemprop="name">{{ post.author }}</span>
+			</span>
+			{% endif %}
+			<time class="post-date" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+				{{ post.date | date: "%Y-%m-%d %H:%M" }}
+			</time>
+		</p><!-- .blog-article-meta -->
+	</header>
+	{{ post.content }}
+</article>
+{% endfor %}
+
+{% comment %}
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{% endcomment %}

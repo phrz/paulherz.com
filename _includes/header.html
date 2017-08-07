@@ -1,0 +1,24 @@
+<header class="page-header" role="banner">
+	<div class="page-header-content">
+		<!-- <img src="img/logo.png" class="main-logo" alt="Paul Herz"> -->
+		<a href="{{ "/" | relative_url }}" aria-label="Return to the home page" class="main-logo-link">
+			<svg viewBox="0 0 2000 1293" class="main-logo" width="128" aria-hidden="true" alt="Paul Herz">
+				<defs><style>.cls-1 {fill-rule: evenodd;}</style></defs>
+				<path id="PH" class="cls-1" d="M568.06,283.6H292.012v710H466.358V795.537H570.295q173.22,0,257.606-60.945t84.38-192.482q0-131.531-82.144-195.022Q747.993,283.62,568.06,283.6h0Zm15.646,374.807H466.358v-238.7h99.467q86.046,0,126.847,25.9,40.784,25.9,40.793,87.353,0,61.469-31.293,93.448-31.3,31.995-118.466,31.995h0ZM1533.65,580.2H1222.96V283.6H1048.61v710h174.35V714.277h310.69V993.605H1708v-710H1533.65V580.2Z"/>
+				<path class="cls-1" d="M0,0H2000V1293H0V0ZM133.333,133.3H1866.67V1159.7H133.333V133.3Z"/>
+			</svg>
+		</a>
+		<nav class="main-nav" role="navigation">
+			<ul class="nav-list">
+				{% assign sorted_nav_items = (site.pages | where: 'menu','main' | sort: 'weight') %}
+				{% for p in sorted_nav_items %}
+					{% if p.menu == 'main' %}
+					<li>
+						<a class="subtle-link" href="{{ p.url }}">{{ p.title }}</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</header>

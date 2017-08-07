@@ -1,0 +1,55 @@
+div.highlighter-rouge {
+	position: relative;
+}
+
+div.highlighter-rouge:before {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.5rem;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #000;
+}
+
+$languages: (
+	apache: 'Apache',
+	c: 'C',
+	cmake: 'Cmake',
+	coffeescript: 'CoffeeScript',
+	cpp: 'C++',
+	csharp: 'C#',
+	css: 'CSS',
+	go: 'Go',
+	html: 'HTML',
+	http: 'HTTP',
+	java: 'Java',
+	javascript: 'JavaScript',
+	json: 'JSON',
+	make: 'Make',
+	markdown: 'Markdown',
+	perl: 'Perl',
+	php: 'PHP',
+	powershell: 'PowerShell',
+	python: 'Python',
+	ruby: 'Ruby',
+	rust: 'Rust',
+	scss: 'SCSS',
+	shell: 'Shell',
+	sql: 'SQL',
+	swift: 'Swift',
+	tex: 'TeX',
+	typescript: 'TypeScript',
+	xml: 'XML',
+	yaml: 'YAML'
+);
+
+@each $slug, $name in $languages {
+	.language-#{$slug} pre {
+		padding-top: 1.6em;
+	}
+	.language-#{$slug}:before {
+		content: $name;
+	}
+}

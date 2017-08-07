@@ -1,0 +1,94 @@
+.post {
+	max-width: 35rem;
+	margin-bottom: 1rem;
+
+	pre, code {
+		font-size: 0.9em;
+		background: hsl(0,0%,95%);
+		tab-size: 4;
+		border: 1px solid  hsl(0,0%,80%);
+		color: black;
+
+		::selection {
+			background: rgba(black, 0.3);
+		}
+	}
+
+	pre {
+		padding: 1em;
+	}
+
+	code {
+		padding: 0.1em 0.25em;
+	}
+
+	pre > code {
+		border: none;
+		padding: 0;
+		background: none;
+	}
+
+	img {
+		width: 100%;
+		margin: 0 0 1rem;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		display: block;
+		font-weight: 600;
+		margin-top: 0;
+		line-height: 1em;
+	}
+
+	p {
+		line-height: 1.4;
+		margin: 0 0 1rem;
+	}
+
+	blockquote {
+		border-left: 0.3rem solid rgba($foreground, 0.3);
+		margin: 1rem 1rem 1rem 0.25rem;
+		padding: 1rem 1rem 1px 1rem;
+	}
+
+	ul,ol {
+		margin-bottom: 1em;
+		line-height: 1.4;
+		li {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	.post-header {
+		margin-bottom: 1.8rem;
+	}
+
+	.post-title {
+		font-size: 1.9rem;
+		font-weight: 500;
+		margin-bottom: 0.8rem;
+	}
+
+	.post-meta {
+		text-transform: uppercase;
+		font-size: 0.9em;
+	}
+
+	.post-author {
+		padding-right: 1rem;
+	}
+
+	.post-date {
+		color: rgba($foreground, 0.5);
+	}
+}
+
+@media screen and (min-width: 23rem) {
+	.post {
+		p {
+			line-height: 1.6;
+		}
+	}
+}
+
+@media screen and (min-width: 50rem) {}
