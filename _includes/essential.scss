@@ -1,0 +1,207 @@
+
+@import 'global';
+
+* {
+	box-sizing: border-box;
+}
+
+::selection {
+	background: $foreground;
+	color: $background;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	font: 12pt/1 sans-serif;
+	margin: 0;
+	color: $foreground;
+	@include small {
+		font-size: 1.1em;
+	}
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+pre, code {
+	font-family: $monospace-font-stack;
+	font-size: 0.9em;
+	tab-size: 4;
+}
+
+pre {
+	overflow-x: auto;
+	overflow-y: visible;
+	margin-bottom: 1.4rem;
+	padding: 1em;
+}
+
+code { padding: 0.1em 0.25em; }
+pre > code {padding: 0;}
+
+mark {
+	background: rgba(yellow, 0.6);
+}
+
+a:link {
+	color: $highlight;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 600;
+	margin-top: 0;
+}
+
+h1 {font-weight: 400}
+
+.sr-skip {
+	position:absolute;
+	z-index: 10;
+	opacity: 0;
+	padding: 1rem;
+	&:focus {
+		position:fixed;
+		opacity:1;
+	}
+}
+
+.page {
+	width: 100%;
+	max-width: 2000px;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: $background;
+	z-index: 1;
+	@include medium {
+		flex-direction: row;
+	}
+}
+
+.page-header {
+	min-width: 6rem;
+	flex: 0;
+	@include medium {
+		flex: 0 0 20%;
+		margin-right: 1.6rem;
+	}
+}
+
+.page-header-content, .page-main {
+	padding: 1rem 1rem 0;
+	@include small {
+		padding: 1.6rem 1.6rem 0;
+	}
+}
+
+.page-header-content {
+	@include medium {
+		padding: 2.6rem 0 0 2.6rem;
+		position: fixed;
+		top: 0;
+	}
+}
+
+.page-main {
+	flex: auto;
+	margin-bottom: 1rem;
+	@include small {
+		padding-top: 1rem;
+		margin-bottom: 1.6rem;
+	}
+	@include medium {
+		padding: 2.6rem 1.6rem 0 0;
+	}
+}
+
+.main-logo {
+	width: 4rem;
+	@include small {
+		width: 6rem;
+	}
+	path {
+		fill: $foreground;
+	}
+}
+
+.main-logo-link {
+	margin: 0 0 1.5rem;
+	display: inline-block;
+}
+
+.nav-list {
+	list-style: none;
+	padding: 0 0 0 0.2rem;
+}
+
+.nav-list li {
+	display: block;
+	text-transform: uppercase;
+	margin: 0 0 1rem;
+	user-select: none;
+	cursor: default;
+}
+
+.home-hero {
+	@include medium {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.hero-text {
+	max-width: 20em;
+	font-weight: 200;
+	font-style: italic;
+	flex: 0;
+}
+
+.post {
+	max-width: 35rem;
+	margin-bottom: 1rem;
+	
+	p, ul, ol { line-height: 1.4; }
+
+	p { 
+		@include small { 
+			line-height: 1.6; 
+		} 
+	}
+
+	.post-header {
+		margin-bottom: 1.8rem;
+	}
+
+	.post-title {
+		font-size: 1.9rem;
+		font-weight: 500;
+		margin-bottom: 0.8rem;
+	}
+
+	.post-meta {
+		text-transform: uppercase;
+		font-size: 0.9em;
+	}
+
+	.post-author {
+		padding-right: 1rem;
+	}
+}
+
+.subtle-link {
+	&, &:link {
+		color: $foreground;
+		text-decoration: none;
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

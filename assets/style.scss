@@ -2,201 +2,53 @@
 # Empty front matter
 ---
 
-@mixin small {
-	@media only screen and (min-width: 23rem) { @content }
-}
+@import 'global';
 
-@mixin medium {
-	@media only screen and (min-width: 50rem) { @content }
-}
+.post {
 
-$monospace-font-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	pre, code {
+		background: hsl(0,0%,95%);
+		border: 1px solid hsl(0,0%,80%);
+		color: black;
 
-$background: #fff;
-$foreground: #000;
-$highlight: #0066cc;
+		::selection {
+			color: hsl(0,0%,95%);
+			background: black;
+		}
+	}
 
-* { box-sizing: border-box; }
+	pre > code {
+		border: none;
+		background: none;
+	}
 
-::selection {
-	background: $foreground;
-	color: $background;
-}
+	img {
+		width: 100%;
+		margin: 0 0 1rem;
+	}
 
-html {
-	height: 100%;
-}
+	blockquote {
+		border-left: 0.3rem solid rgba($foreground, 0.3);
+		margin: 1rem 1rem 1rem 0.25rem;
+		padding: 1rem 1rem 1px 1rem;
+	}
 
-body {
-	min-height: 100%;
-	font: 12pt/1em sans-serif;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	color: $foreground;
-	@include small {
-		font-size: 1.1em;
+	ul,ol {
+		margin-bottom: 1em;
+		li {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	.post-date {
+		color: rgba($foreground, 0.5);
 	}
 }
 
-pre {
-	overflow-x: auto;
-	overflow-y: visible;
-	margin-bottom: 1.4rem;
-}
-
-pre, code {
-	font-family: $monospace-font-stack;
-}
-
-mark {
-	background: rgba(yellow, 0.6);
-}
-
-h1,h2,h3,h4,h5,h6 {
-	display: block;
-	font-weight: 600;
-	margin-top: 0;
-	line-height: 1em;
-}
-
-a:link {
-	color: $highlight;
-}
-
-.subtle-link {
-	&, &:link {
-		color: $foreground;
-		text-decoration: none;
-	}
-
-	&:hover {
-		text-decoration: underline;
+@include small {
+	.post {
+		p {
+			line-height: 1.6;
+		}
 	}
 }
-
-.sr-skip {
-	position:absolute; 
-	left:-10000px; 
-	top:auto; 
-	width:1px; 
-	height:1px; 
-	overflow:hidden;
-	background: $foreground;
-	z-index: 10;
-	padding: 1rem;
-
-	&, &:link {
-		color: $background;
-	}
-
-	&:focus {
-		position:fixed; 
-		top: 0;
-		left: 0;
-		width:auto;
-		height:auto;
-	}
-}
-
-.page {
-	width: 100%;
-	max-width: 2000px;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	background: $background;
-	z-index: 1;
-	@include medium {
-		flex-direction: row;
-	}
-}
-
-.page-header {
-	min-width: 6rem;
-	flex: 0;
-	@include medium {
-		flex: 0 0 20%;
-		margin-right: 1.6rem;
-	}
-}
-
-.page-header-content, .page-main {
-	padding: 1rem 1rem 0;
-	@include small {
-		padding: 1.6rem 1.6rem 0;
-	}
-}
-
-.page-header-content {
-	@include medium {
-		padding: 2.6rem 0 0 2.6rem;
-		position: fixed;
-		top: 0;
-	}
-}
-
-.page-main {
-	flex: auto;
-	margin-bottom: 1rem;
-	@include small {
-		padding-top: 1rem;
-		margin-bottom: 1.6rem;
-	}
-	@include medium {
-		padding: 2.6rem 1.6rem 0 0;
-	}
-}
-
-.main-logo-link, .main-logo {
-	display: inline-block;
-}
-
-.main-logo-link {
-	margin: 0 0 1.5rem;
-}
-
-.main-logo {
-	width: 4rem;
-	@include small {
-		width: 6rem;
-	}
-	path {
-		fill: $foreground;
-	}
-}
-
-.home-hero {
-	@include medium {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-}
-
-.hero-text {
-	max-width: 20em;
-	font-weight: 200;
-	font-style: italic;
-	flex: 0;
-}
-
-.nav-list {
-	list-style: none;
-	display: block;
-	margin: 0;
-	padding: 0 0 0 0.2rem;
-}
-
-.nav-list li {
-	display: block;
-	text-transform: uppercase;
-	margin: 0 0 1rem;
-	user-select: none;
-	cursor: default;
-}
-
-@import "content";
-@import "highlight";
-@import "language-names";

@@ -1,0 +1,13 @@
+@mixin small {
+	@media only screen and (min-width: 23rem) { @content }
+}
+
+@mixin medium {
+	@media only screen and (min-width: 50rem) { @content }
+}
+
+$monospace-font-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+$background: #fff;
+$foreground: #000;
+$highlight: #0066cc;
