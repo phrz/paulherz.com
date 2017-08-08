@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 	{% include head.html %}
-	<body>
+	<body class="page">
 		<a href="#main" class="sr-skip">Skip to main content</a>
-		<div class="page">
+		<!-- <div class="page"> -->
 			{% include header.html %}
 			<main id="main" class="page-main" role="main">
 				{{ content }}
 			</main>
 			{% include footer.html %}
-		</div>
+		<!-- </div> -->
 	</body>
 </html>

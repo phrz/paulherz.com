@@ -2,12 +2,12 @@
 # Empty front matter
 ---
 
-@mixin medium {
-	@media screen and (min-width: 23rem) { @content }
+@mixin small {
+	@media only screen and (min-width: 23rem) { @content }
 }
 
-@mixin large {
-	@media screen and (min-width: 50rem) { @content }
+@mixin medium {
+	@media only screen and (min-width: 50rem) { @content }
 }
 
 $monospace-font-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -23,13 +23,20 @@ $highlight: #0066cc;
 	color: $background;
 }
 
-html, body {
+html {
+	height: 100%;
+}
+
+body {
 	min-height: 100%;
 	font: 12pt/1em sans-serif;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
 	color: $foreground;
+	@include small {
+		font-size: 1.1em;
+	}
 }
 
 pre {
@@ -44,6 +51,13 @@ pre, code {
 
 mark {
 	background: rgba(yellow, 0.6);
+}
+
+h1,h2,h3,h4,h5,h6 {
+	display: block;
+	font-weight: 600;
+	margin-top: 0;
+	line-height: 1em;
 }
 
 a:link {
@@ -93,20 +107,45 @@ a:link {
 	flex-direction: column;
 	background: $background;
 	z-index: 1;
+	@include medium {
+		flex-direction: row;
+	}
 }
 
 .page-header {
 	min-width: 6rem;
 	flex: 0;
+	@include medium {
+		flex: 0 0 20%;
+		margin-right: 1.6rem;
+	}
 }
 
 .page-header-content, .page-main {
 	padding: 1rem 1rem 0;
+	@include small {
+		padding: 1.6rem 1.6rem 0;
+	}
+}
+
+.page-header-content {
+	@include medium {
+		padding: 2.6rem 0 0 2.6rem;
+		position: fixed;
+		top: 0;
+	}
 }
 
 .page-main {
 	flex: auto;
 	margin-bottom: 1rem;
+	@include small {
+		padding-top: 1rem;
+		margin-bottom: 1.6rem;
+	}
+	@include medium {
+		padding: 2.6rem 1.6rem 0 0;
+	}
 }
 
 .main-logo-link, .main-logo {
@@ -119,9 +158,28 @@ a:link {
 
 .main-logo {
 	width: 4rem;
+	@include small {
+		width: 6rem;
+	}
 	path {
 		fill: $foreground;
 	}
+}
+
+.home-hero {
+	@include medium {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.hero-text {
+	max-width: 20em;
+	font-weight: 200;
+	font-style: italic;
+	flex: 0;
 }
 
 .nav-list {
@@ -137,41 +195,6 @@ a:link {
 	margin: 0 0 1rem;
 	user-select: none;
 	cursor: default;
-}
-
-@include medium {
-	body {
-		font-size: 1.1em;
-	}
-	.main-logo {
-		width: 6rem;
-	}
-	.page-header-content, .page-main {
-		padding: 1.6rem 1.6rem 0;
-	}
-	.page-main {
-		flex: auto;
-		padding-top: 1rem;
-		margin-bottom: 1.6rem;
-	}
-}
-
-@include large {
-	.page {
-		flex-direction: row;
-	}
-	.page-header {
-		flex: 0 0 20%;
-		margin-right: 1.6rem;
-	}
-	.page-header-content {
-		padding: 2.6rem 0 0 2.6rem;
-		position: fixed;
-		top: 0;
-	}
-	.page-main {
-		padding: 2.6rem 1.6rem 0 0;
-	}
 }
 
 @import "content";
