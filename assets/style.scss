@@ -16,14 +16,11 @@ $background: #fff;
 $foreground: #000;
 $highlight: #0066cc;
 
-// $background: purple;
-// $foreground: lavender;
-// $highlight: #0066cc;
-
 * { box-sizing: border-box; }
 
 ::selection {
-	background: rgba($foreground,0.3);
+	background: $foreground;
+	color: $background;
 }
 
 html, body {

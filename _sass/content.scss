@@ -10,7 +10,8 @@
 		color: black;
 
 		::selection {
-			background: rgba(black, 0.3);
+			color: hsl(0,0%,95%);
+			background: black;
 		}
 	}
 

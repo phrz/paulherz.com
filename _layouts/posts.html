@@ -16,9 +16,9 @@ layout: default
 				<span itemprop="name">{{ post.author }}</span>
 			</span>
 			{% endif %}
-			{% if page.date %}
+			{% if post.date %}
 			<time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-				{{ page.date | date: "%Y-%m-%d %H:%M" }}
+				{{ post.date | date: "%Y-%m-%d %H:%M" }}
 			</time>
 			{% endif %}
 		</p><!-- .blog-article-meta -->
