@@ -45,10 +45,15 @@ $languages: (
 	yaml: 'YAML'
 );
 
+$selectors: ();
+@each $value, $_ in $languages {
+	$selector: unquote(".language-#{$value} pre");
+	$selectors: append($selectors, $selector, comma);
+}
+
+#{$selectors} { padding-top: 1.6em; }
+
 @each $slug, $name in $languages {
-	.language-#{$slug} pre {
-		padding-top: 1.6em;
-	}
 	.language-#{$slug}:before {
 		content: $name;
 	}

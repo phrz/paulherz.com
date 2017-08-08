@@ -1,9 +1,11 @@
+---
+# Empty front matter
+---
 /*
  * Tango theme
  * http://richleland.github.io/pygments-css/
  * https://github.com/richleland/pygments-css
 */
-
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #8f5902; font-style: italic } /* Comment */
@@ -81,3 +83,5 @@
 .highlight .vi { color: #000000 } /* Name.Variable.Instance */
 .highlight .vm { color: #000000 } /* Name.Variable.Magic */
 .highlight .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
+
+// @import 'language-names';
