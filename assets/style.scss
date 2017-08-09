@@ -42,9 +42,7 @@ pre code {
 
 /* STRUCTURE */
 .page {
-	width: 100%;
 	max-width: 2000px;
-	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	background: $background;
@@ -108,13 +106,13 @@ pre code {
 }
 
 .nav-list {
-	padding: 0 0 0 0.2rem;
+	padding-left: 0.2rem;
 }
 
 .nav-list li {
 	display: block;
 	text-transform: uppercase;
-	margin: 0 0 1rem;
+	margin-bottom: 1rem;
 	user-select: none;
 	cursor: default;
 }
@@ -160,6 +158,7 @@ pre code {
 			background: black;
 		}
 	}
+	
 	pre code { background: none; }
 
 	img {
