@@ -13,19 +13,22 @@
 
 html {
 	height: 100%;
+	font: 12pt/1 sans-serif;
+	@include small {
+		font-size: 1.1em;
+	}
+	@include medium {
+		font-size: 1.2em;
+	}
 }
 
 body {
 	min-height: 100%;
-	font: 12pt/1 sans-serif;
 	margin: 0;
 	color: $foreground;
-	@include small {
-		font-size: 1.1rem;
-	}
 }
 
-body, p, pre, code, h1, h2, h3, h4, h5, h6 {
+body, p, pre, code, h1, h2, h3, h4, h5, h6, ul, ol {
 	margin: 0;
 	padding: 0;
 }
@@ -34,12 +37,17 @@ p, ul, ol, .post {
 	margin-bottom: 1em;
 }
 
+ul, ol {
+	margin-left: 1em;
+}
+
 li {
 	margin-bottom: 0.5em;
 }
 
 nav {
 	ul, ol {
+		margin-left: 0;
 		padding: 0;
 		list-style: none;
 	}
