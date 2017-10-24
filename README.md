@@ -1,0 +1,1 @@
+To setup locally, run `make setup`. To build and upload, run `make` (the build and deploy targets). On the server, this will push to /var/www/paulherz. Ensure caddy is installed (follow instructions on their site) and copy this caddyfile to the home folder (or anywhere), inputting the correct email address.

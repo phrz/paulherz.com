@@ -1,0 +1,4 @@
+https://paulherz.com {
+	root /var/www/paulherz.com
+	tls <email>
+}
