@@ -1,4 +1,4 @@
-default: build, deploy
+default: build deploy
 
 setup:
 	./bin/setup.sh

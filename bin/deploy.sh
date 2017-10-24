@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-scp -r _site ph:/var/www/paulherz
+scp -prq _site/. ph:/var/www/paulherz/.
