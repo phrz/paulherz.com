@@ -6,7 +6,10 @@
 	@media only screen and (min-width: 50rem) { @content }
 }
 
+$primary-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $monospace-font-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$header-font-stack: $primary-font-stack;
+$article-font-stack: $primary-font-stack;
 
 $background: #fff;
 $foreground: #000;

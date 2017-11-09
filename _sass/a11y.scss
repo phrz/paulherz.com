@@ -1,0 +1,17 @@
+
+/* Content only to appear when tabbed-to or
+   read by the screen reader, namely the
+   "skip to content" link.
+*/
+.sr-skip {
+	position:absolute;
+	z-index: 10;
+	opacity: 0;
+	padding: 1rem;
+	pointer-events: none;
+	&:focus {
+		position:fixed;
+		opacity:1;
+		pointer-events: auto;
+	}
+}

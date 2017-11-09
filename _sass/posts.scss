@@ -1,0 +1,64 @@
+.post {
+	max-width: 35rem;
+
+	p, ul, ol, blockquote, figcaption {
+		font-family: $article-font-stack;
+	}
+	
+	p, ul, ol { line-height: 1.4; }
+
+	p { 
+		@include small { 
+			line-height: 1.6; 
+		}
+	}
+
+	/* AESTHETIC */
+	pre, code {
+		background: #f6f8fa;
+		color: black;
+
+		::selection {
+			color: $selection-foreground;
+			background: black;
+		}
+	}
+	
+	pre code { background: none; }
+
+	img {
+		width: 100%;
+		margin: 0 0 1rem;
+	}
+
+	blockquote {
+		border-left: 0.3rem solid rgba($foreground, 0.3);
+		margin: 1rem 1rem 1rem 0.25rem;
+		padding: 1rem 1rem 1px 1rem;
+	}
+
+	.post-date {
+		color: rgba($foreground, 0.5);
+	}
+	/* END AESTHETIC */
+}
+
+.post-header {
+	margin-bottom: 1.8rem;
+}
+
+.post-title {
+	margin-bottom: 0.8rem;
+	@include small {
+		font-size: 1.9rem;
+	}
+}
+
+.post-meta {
+	text-transform: uppercase;
+	font-size: 0.9em;
+}
+
+.post-author {
+	padding-right: 1rem;
+}

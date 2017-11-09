@@ -1,8 +1,13 @@
 default: build deploy
 
+serve:
+	bundler exec jekyll serve --drafts
 setup:
 	./bin/setup.sh
 build:
-	./bin/build.sh
+	bundler exec jekyll build
 deploy:
-	./bin/deploy.sh
+	# --compress --one-file-system --recursive --checksum
+	rsync --progress -zxrc --delete _site/ ph:/var/www/paulherz/
+clean:
+	bundler exec jekyll clean

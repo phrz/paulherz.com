@@ -6,6 +6,22 @@ author: "Paul Herz"
 categories: test
 ---
 
+```python
+Y,G,B=lambda i:B[A[i]],0,['-']*9
+while 1:
+	G=1-G;t='XO'[G]
+	for x in 0,3,6:print(B[x:x+3])
+	while 1:
+		q=ord(input(t)[0])-49
+		if B[q]=='-':B[q]=t;break
+	A=[*range(9),0,4,8,2,4,6,0,3,6,1,4,7,2,5,8]
+	exec("if(Y(0)==Y(1)==Y(2)!='-'):print('W'+t);exit()\nA=A[3:]\n"*8)
+```
+
+OLD
+
+---
+
 This week, just for fun, I took my first shot at code golf. The name comes from golf, where lower scores are better: it's a programming game where you try to make your code as short as possible. Golfers gather to work on puzzles in several places, like [Reddit](https://www.reddit.com/r/codegolf/) and [StackExchange](https://codegolf.stackexchange.com/).
 
 For no reason other than boredom, I challenged myself to write the shortest Tic Tac Toe game I could. I started by writing out a full-length version with Python 3. I gradually stripped away unnecessary abstractions, external libraries, and verbosity until I got this:

@@ -11,7 +11,7 @@ if command_exists 'bundler'; then
 else
 	echo "[X]  'bundler' is not installed"
 	echo "     attempting to install..."
-	gem install bundler
+	gem install bundler -​-silent
 	if command_exists 'bundler'; then
 		echo "install succeeded"
 	else
@@ -20,9 +20,9 @@ else
 	fi
 fi
 
-bundle install --quiet
+bundle install --silent
 
-if command_exists 'bundler'; then
+if command_exists 'jekyll'; then
 	echo "[O]  'jekyll' is installed"
 else
 	echo "[X]  'jekyll' is not installed"
