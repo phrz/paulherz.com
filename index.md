@@ -1,7 +1,7 @@
 ---
 # Edit /_layouts/home.html instead
-layout: home
-title: Home
+layout: posts
+title: Blog
 permalink: /
 menu: main
 weight: 1

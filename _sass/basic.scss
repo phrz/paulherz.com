@@ -1,17 +1,11 @@
 /* GENERAL HTML */
 * {
 	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-}
-
-::selection {
-	background: $selection-background;
-	color: $selection-foreground;
 }
 
 html {
 	height: 100%;
-	font: 16px/1 $primary-font-stack;
+	font: 18px/1 $primary-font-stack;
 	@include small {
 		font-size: 1.1em;
 	}
@@ -20,18 +14,18 @@ html {
 	}
 }
 
-body {
-	min-height: 100%;
-	margin: 0;
-	color: $foreground;
-}
-
-body, p, pre, code, h1, h2, h3, h4, h5, h6, ul, ol {
+body, p, pre, code, ul, ol {
 	margin: 0;
 	padding: 0;
 }
 
-p, ul, ol, pre, .post {
+body {
+	min-height: 100%;
+	color: $foreground;
+	padding: 1px 0;
+}
+
+p, ul, ol, pre {
 	margin-bottom: 1em;
 }
 
@@ -45,20 +39,24 @@ li {
 
 nav {
 	ul, ol {
-		margin-left: 0;
+		margin: 1rem 0;
 		padding: 0;
 		list-style: none;
 	}
 }
 
-a:link {
-	color: $highlight;
+hr {
+	border: 0.075rem solid #999;
+}
+
+a:link, a:visited {
+	color: $link-color;
 }
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: $header-font-stack;
 	font-weight: 600;
-	margin-bottom: 1em;
+	margin: 0 0 1em;
 }
 
 h1 {
@@ -70,3 +68,52 @@ mark {
 }
 
 /* END GENERAL HTML */
+
+.post {
+	margin: 0 auto 3rem;
+}
+
+.page-header, .page-footer {
+	text-align: center;
+	margin: 1rem auto;
+}
+
+.page-header, .page-footer, .post, .container {
+	max-width: $post-width + $post-pad;
+	padding: 0 $post-pad/2;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include small {
+		max-width: $post-width + $post-pad * 2;
+		padding: 0 $post-pad;
+	}
+}
+
+.container {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+.logo {
+	width: 4rem;
+	path {
+		fill: $foreground;
+	}
+}
+
+.logo-link {
+	display: inline-block;
+	margin: 1rem;
+}
+
+.page-main {
+	margin: 1rem 0;
+}
+
+.main-nav ul {
+	width: 100%;
+	max-width: $post-width;
+	display: flex;
+	justify-content: space-around;
+}
