@@ -1,5 +1,7 @@
 default: build deploy
 
+help:
+	perl -wnE'say for/^[^\s:]+/g'<Makefile
 serve:
 	bundler exec jekyll serve --drafts
 setup:
