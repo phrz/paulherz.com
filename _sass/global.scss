@@ -6,14 +6,14 @@
 	@media only screen and (min-width: 50rem) { @content }
 }
 
-$primary-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$monospace-font-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$primary-font-stack: sans-serif;
+$monospace-font-stack: Menlo, Monaco, Consolas, "Courier New", monospace;
 $header-font-stack: $primary-font-stack;
 $article-font-stack: $primary-font-stack;
 
 $background: #fff;
 $foreground: #000;
-$highlight: #0066cc;
+$link-color: $foreground; // 0066cc
 
-$selection-foreground: hsl(0,0%,95%);
-$selection-background: #000;
+$post-width: 630px;
+$post-pad: 36px;

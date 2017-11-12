@@ -1,6 +1,4 @@
 .post {
-	max-width: 35rem;
-
 	p, ul, ol, blockquote, figcaption {
 		font-family: $article-font-stack;
 	}
@@ -14,14 +12,10 @@
 	}
 
 	/* AESTHETIC */
+
 	pre, code {
 		background: #f6f8fa;
 		color: black;
-
-		::selection {
-			color: $selection-foreground;
-			background: black;
-		}
 	}
 	
 	pre code { background: none; }
@@ -44,14 +38,11 @@
 }
 
 .post-header {
-	margin-bottom: 1.8rem;
+	margin-bottom: 1rem;
 }
 
 .post-title {
 	margin-bottom: 0.8rem;
-	@include small {
-		font-size: 1.9rem;
-	}
 }
 
 .post-meta {

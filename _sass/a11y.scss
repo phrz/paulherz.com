@@ -4,14 +4,14 @@
    "skip to content" link.
 */
 .sr-skip {
-	position:absolute;
+	position: absolute;
 	z-index: 10;
 	opacity: 0;
 	padding: 1rem;
 	pointer-events: none;
 	&:focus {
-		position:fixed;
-		opacity:1;
+		position: fixed;
+		opacity: 1;
 		pointer-events: auto;
 	}
 }
