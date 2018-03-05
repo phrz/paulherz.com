@@ -1,6 +1,6 @@
 You need docker on your host machine. You may need to start the docker GUI if on macOS or Windows to get the daemon going.
 
-Have `caddy` installed on the server, following official instructions. 
+Have `caddy` installed on the server: `curl https://getcaddy.com | bash -s personal`
 
 Put the `Caddyfile` in the user home, along with `keepup.sh`. 
 Run `crontab -e` and add a Cron job for `keepup` every ten minutes:
