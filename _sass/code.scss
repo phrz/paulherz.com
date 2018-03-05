@@ -2,6 +2,7 @@ pre, code {
 	font-family: $monospace-font-stack;
 	tab-size: 4;
 }
+
 pre {
 	line-height: 1.7;
 	background: #f6f8fa;
@@ -9,9 +10,17 @@ pre {
 	overflow-x: auto;
 	font-size: 0.9em;
 }
+
 code { 
 	padding: 0.1em 0.25em; 
 }
+
 pre code {
 	padding: 0;
+}
+
+// Inline code in articles
+// seems a little too big.
+p code {
+	font-size: 0.9em;
 }
