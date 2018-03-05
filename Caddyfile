@@ -1,4 +1,6 @@
 https://paulherz.com {
-	root /var/www/paulherz.com
+	root /var/www/paulherz
 	tls <email>
+	log access.log
+	errors error.log
 }
