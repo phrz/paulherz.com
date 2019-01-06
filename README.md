@@ -1,16 +1,28 @@
-You need docker on your host machine. You may need to start the docker GUI if on macOS or Windows to get the daemon going.
+## Local setup:
+1. `brew cask install docker`
+2. Start Docker.app (ensure it's running if you get daemon connection errors)
+3. `git clone git@github.com:phrz/paulherz.com`
+4. `cd paulherz.com`
 
-Have `caddy` installed on the server: `curl https://getcaddy.com | bash -s personal`
+## Local site testing:
+4. `make serve`
+5. `open http://localhost:4000/`
 
-Put the `Caddyfile` in the user home, along with `keepup.sh`. 
-Run `crontab -e` and add a Cron job for `keepup` every ten minutes:
-```
-*/10 * * * * /root/keepup.sh
-```
+## Server setup (assumes `root` user):
+1. Spin up a Ubuntu VM and attach to IP for paulherz.com. Setup ssh certs. Setup `ph` alias on local dev machine.
+2. `curl https://getcaddy.com | bash -s personal`
+3. `apt install git`
+4. `git clone git@github.com:phrz/paulherz.com`
+5. `cd paulherz.com`
+6. `cp Caddyfile ..`
+7. `cp keepup.sh ..`
+8. `cd ..`
+9. `chmod +x keepup.sh`
+10. `mkdir -p /var/www/paulherz`
+11. Edit `Caddyfile` to contain email address.
+12. Run `crontab -e` and add `*/10 * * * * /root/keepup.sh` (every 10 min)
 
-For a VPS whose only user is root. You may need to run `chmod +x keepup.sh`.
-Edit the `Caddyfile` to contain your email. Run `mkdir -p /var/www/paulherz` before deploying.
+## Push the site:
+1. `make` (builds from scratch and deploys to `/var/www/paulherz` folder)
 
-To serve locally for development, run `make serve`.
-
-To build and upload, run `make` (the build and deploy targets). On the server, this will push to `/var/www/paulherz`. This assumes you have proper certificates for paulherz.com established on your host machine.
+Note: you may occassionally need to update the jekyll Docker image, do so with `docker pull jekyll/jekyll` on your development machine.
