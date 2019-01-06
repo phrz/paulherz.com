@@ -11,4 +11,6 @@ Run `crontab -e` and add a Cron job for `keepup` every ten minutes:
 For a VPS whose only user is root. You may need to run `chmod +x keepup.sh`.
 Edit the `Caddyfile` to contain your email. Run `mkdir -p /var/www/paulherz` before deploying.
 
-To setup locally, run `make setup`. To build and upload, run `make` (the build and deploy targets). On the server, this will push to `/var/www/paulherz`. This assumes you have proper certificates for paulherz.com established on your host machine.
+To serve locally for development, run `make serve`.
+
+To build and upload, run `make` (the build and deploy targets). On the server, this will push to `/var/www/paulherz`. This assumes you have proper certificates for paulherz.com established on your host machine.
