@@ -1,17 +1,13 @@
 /* GENERAL HTML */
 * {
 	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 html {
 	height: 100%;
-	font: 18px/1 $primary-font-stack;
-	@include small {
-		font-size: 1.1em;
-	}
-	@include medium {
-		font-size: 1.2em;
-	}
+	font: $base-font-size/1 $ui-font;
 }
 
 body, p, pre, code, ul, ol {
@@ -23,6 +19,10 @@ body {
 	min-height: 100%;
 	color: $foreground;
 	padding: 1px 0;
+
+	@include medium {
+		display: flex;
+	}
 }
 
 p, ul, ol, pre {
@@ -54,7 +54,7 @@ a:link, a:visited {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	font-family: $header-font-stack;
+	font-family: $title-font;
 	font-weight: 600;
 	margin: 0 0 1em;
 }
@@ -70,41 +70,88 @@ mark {
 /* END GENERAL HTML */
 
 .post {
-	margin: 0 auto 3rem;
+	margin: 0 0 5rem;
 }
 
-.page-header, .page-footer {
-	text-align: center;
-	margin: 1rem auto;
-}
-
-.page-header, .page-footer, .post, .container {
-	max-width: $post-width + $post-pad;
-	padding: 0 $post-pad/2;
-	margin-left: auto;
-	margin-right: auto;
+.page-header {
+	height: 90px;
+	margin: 0.5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
 	@include small {
-		max-width: $post-width + $post-pad * 2;
+		margin: 1.5rem 0;
+		justify-content: flex-start;
+	}
+
+	@include medium {
+		margin: 2.6rem 0 1.5rem;
+	}
+
+	@include large {
+		margin: 4rem 0 6rem;
+	}
+}
+
+.post-header {
+	max-width: 50rem;
+}
+
+.page-footer {
+	margin: 1rem 0 3rem;
+}
+
+.page-header, .page-footer, .post-header, .post-content {
+	padding: 0 $post-pad/2;
+
+	@include small {
 		padding: 0 $post-pad;
 	}
 }
 
-.container {
-	margin-top: 5rem;
-	margin-bottom: 5rem;
-}
+.page-header, .page-footer, .post-content {
+	max-width: $post-width + $post-pad;
 
-.logo {
-	width: 4rem;
-	path {
-		fill: $foreground;
+	@include small {
+		max-width: $post-width + $post-pad * 2;
 	}
 }
 
 .logo-link {
-	display: inline-block;
-	margin: 1rem;
+	display: block;
+	margin: 1rem 1rem 1rem 0;
+
+	img {
+		display: block;
+	}
+}
+
+.logo-link-header {
+	@include large {
+		display: none;
+	}
+}
+
+.logo-link-side {
+	position: fixed;
+	bottom: 1rem;
+	left: 2.2rem;
+	display: none;
+	@include large {
+		display: block;
+	}
+}
+
+.page-left-bar {
+	display: none;
+	@include medium {
+		width: 2rem;
+		display: block;
+	}
+	@include large {
+		width: 7rem;
+	}
 }
 
 .page-main {
@@ -112,8 +159,18 @@ mark {
 }
 
 .main-nav ul {
-	width: 100%;
-	max-width: $post-width;
 	display: flex;
-	justify-content: space-around;
+	li {
+		margin: 0;
+		padding-left: 1.5rem;
+		text-transform: uppercase;
+
+		@include large {
+			padding-left: 0;
+			padding-right: 1.5rem;
+		}
+	}
+	a {
+		text-decoration: none;
+	}
 }

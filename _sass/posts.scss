@@ -1,6 +1,6 @@
 .post {
 	p, ul, ol, blockquote, figcaption {
-		font-family: $article-font-stack;
+		font-family: $article-font;
 	}
 	
 	p, ul, ol { line-height: 1.4; }
@@ -11,7 +11,23 @@
 		}
 	}
 
+	figure {
+		margin: 2rem 0 1rem;
+	}
+
+	figcaption {
+		font-size: 0.75rem;
+
+		@include small {
+			text-align: right;
+		}
+	}
+
 	/* AESTHETIC */
+
+	a:link {
+		color: $post-link-color;
+	}
 
 	pre, code {
 		background: #f6f8fa;
@@ -31,25 +47,87 @@
 		padding: 1rem 1rem 1px 1rem;
 	}
 
+	// .post-date {
+	// 	color: rgba($foreground, 0.5);
+	// }
+
 	.post-date {
-		color: rgba($foreground, 0.5);
+		@include medium {
+			width: 10rem;
+			display: block;
+			transform: translateX(0.5rem) translateY(15rem) rotate(-90deg);
+			transform-origin: -3.5rem 0;
+			text-align: right;
+		}
+	}
+
+	.pullquote {
+		color: $vivid-color;
+		font-size: 1.6rem;
+		border: none;
+		border-top: 3px solid $vivid-color;
+		padding: 1rem 0 2rem;
+		margin: 1.5rem 0 0;
+
+		@include small {
+			font-size: 1.76rem;
+		}
 	}
 	/* END AESTHETIC */
+
+	.post-header {
+		margin-bottom: 1rem;
+	}
+
+	.post-title {
+		font-size: 2.2rem;
+		margin-bottom: 0.8rem;
+
+		a {
+			text-decoration: none;
+		}
+
+		@include small {
+			font-size: 3.1rem;
+		}
+
+		@include medium {
+			font-size: 3.6rem;
+		}
+
+		@include large {
+			font-size: 4rem;
+		}
+	}
+
+	.post-meta {
+		text-transform: uppercase;
+		font-family: $ui-font;
+
+		@include medium {
+			height: 0;
+		}
+	}
+
+	.post-author {
+		padding-right: 1rem;
+	}
+
+	.post-readmore-link {
+		color: $vivid-color;
+		background-color: $background;
+		border: 1px solid $vivid-color;
+
+		&:hover, &:active {
+			border-color: $vivid-background;
+			background-color: $vivid-background;
+			color: $background;
+		}
+
+		display: inline-block;
+		text-decoration: none;
+		padding: 0.6rem 0.75rem;
+		margin: 0.5rem 0 0;
+	}
 }
 
-.post-header {
-	margin-bottom: 1rem;
-}
-
-.post-title {
-	margin-bottom: 0.8rem;
-}
-
-.post-meta {
-	text-transform: uppercase;
-	font-size: 0.9em;
-}
-
-.post-author {
-	padding-right: 1rem;
-}

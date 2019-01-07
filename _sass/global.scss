@@ -1,19 +1,58 @@
+$base-font-size: 18px;
+
+$small-break: 40*$base-font-size;
+$medium-break: 50*$base-font-size;
+$large-break: 60*$base-font-size;
+
 @mixin small {
-	@media only screen and (min-width: 30rem) { @content }
+	@media only screen and (min-width: $small-break) { @content }
 }
 
 @mixin medium {
-	@media only screen and (min-width: 50rem) { @content }
+	@media only screen and (min-width: $medium-break) { @content }
 }
 
-$primary-font-stack: sans-serif;
+@mixin large {
+	@media only screen and (min-width: $large-break) { @content }
+}
+
+.hide-xsmall {
+	@media only screen and (max-width: $small-break) {
+		display: none;
+	}
+}
+
+.hide-small {
+	@media only screen and (min-width: $small-break) and (max-width: $medium-break) {
+		display: none;
+	}
+}
+
+.hide-medium {
+	@media only screen and (min-width: $medium-break) and (max-width: $large-break) {
+		display: none;
+	}
+}
+
+.hide-large {
+	@media only screen and (min-width: $large-break) {
+		display: none;
+	}
+}
+
+$ui-font: PHInconsolata;
 $monospace-font-stack: Menlo, Monaco, Consolas, "Courier New", monospace;
-$header-font-stack: $primary-font-stack;
-$article-font-stack: $primary-font-stack;
+$title-font: PHRoslindaleDisplayCondensed;
+$article-font: PHETBook, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 
 $background: #fff;
 $foreground: #000;
-$link-color: $foreground; // 0066cc
 
-$post-width: 630px;
-$post-pad: 36px;
+$vivid-color: #FF2500;
+$vivid-background: lighten($vivid-color, 10%);
+
+$link-color: $foreground;
+$post-link-color: $vivid-color;
+
+$post-width: 660px;
+$post-pad: 44px;
