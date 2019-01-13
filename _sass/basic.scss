@@ -22,6 +22,7 @@ body {
 
 	@include medium {
 		display: flex;
+		justify-content: space-around;
 	}
 }
 
