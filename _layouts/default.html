@@ -1,12 +1,14 @@
 ---
 layout: head
 ---
+{% comment %}
 <div style="background:black;color:white;font-family:sans-serif;padding:1rem;position:fixed;bottom:0;right:0">
 	<span class="hide-small hide-medium hide-large">X-SMALL</span>
 	<span class="hide-xsmall hide-medium hide-large">SMALL</span>
 	<span class="hide-xsmall hide-small hide-large">MEDIUM</span>
 	<span class="hide-xsmall hide-small hide-medium">LARGE</span>
 </div>
+{% endcomment %}
 <aside class="page-left-bar">
 	<a href="{{ "/" | relative_url }}" aria-label="Return to the home page" class="logo-link logo-link-side">
 		<img src="{{ '/assets/brand.svg' | relative_url }}">
@@ -30,6 +32,8 @@ layout: head
 	</header>
 	{{- content -}}
 </main>
-<!-- <footer class="page-footer">
+{% comment %}
+<footer class="page-footer">
 	footer
-</footer> -->
+</footer>
+{% endcomment %}
