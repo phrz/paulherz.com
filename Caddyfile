@@ -3,4 +3,5 @@ https://paulherz.com {
 	tls <email>
 	log access.log
 	errors error.log
+	ext .html
 }
