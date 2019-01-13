@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+	<head>
+		<title>Paul Herz</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+		<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+		<link rel="shortcut icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
+		<link rel="apple-touch-icon" href="{{ '/assets/icon.png' | relative_url }}">
+		<link rel="mask-icon" href="{{ '/assets/mask-icon.svg' | relative_url }}" color="#FF2500">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+		<link rel="stylesheet" href="{{ '/assets/highlight.css' | relative_url }}">
+	</head>
+	<body>
+		{{- content -}}
+	</body>
+</html>

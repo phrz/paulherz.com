@@ -59,3 +59,4 @@ exclude:
     - Makefile
     - README.md
     - ./index.html
+    - keepup.sh

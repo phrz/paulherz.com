@@ -1,45 +1,35 @@
-<!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-	<head>
-		<title>Paul Herz</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-		<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-
-		<link rel="shortcut icon" type="image/png" href="{{ '/assets/icon.png' | relative_url }}">
-		<link rel="apple-touch-icon" href="{{ '/assets/icon.png' | relative_url }}">
-		<link rel="mask-icon" href="{{ '/assets/phlogo-square.svg' | relative_url }}" color="#000">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		
-		<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-		<link rel="stylesheet" href="{{ '/assets/highlight.css' | relative_url }}">
-	</head>
-	<body>
-		<a href="#main" class="sr-skip">Skip to main content</a>
-		<header class="page-header">
-			<a href="{{ "/" | relative_url }}" aria-label="Return to the home page" class="logo-link">
-				{%- include header.svg -%}
-			</a>
-		</header>
-		<main id="main" class="page-main">
-			{{- content -}}
-		</main>
-		<footer class="page-footer">
-			<nav class="main-nav">
-				<ul>
-					{%- assign sorted_nav_items = site.pages | where: 'menu','main' | sort: 'weight' -%}
-					{%- for p in sorted_nav_items -%}
-						{%- if p.menu == 'main' -%}
-						<li><a href="{{ p.url }}">{{- p.title -}}</a></li>
-						{%- endif -%}
-					{%- endfor -%}
-				</ul>
-			</nav>
-			<p>
-				<em>Nothing posted here represents my employer.</em>
-			</p>
-		</footer>
-	</body>
-</html>
+---
+layout: head
+---
+<div style="background:black;color:white;font-family:sans-serif;padding:1rem;position:fixed;bottom:0;right:0">
+	<span class="hide-small hide-medium hide-large">X-SMALL</span>
+	<span class="hide-xsmall hide-medium hide-large">SMALL</span>
+	<span class="hide-xsmall hide-small hide-large">MEDIUM</span>
+	<span class="hide-xsmall hide-small hide-medium">LARGE</span>
+</div>
+<aside class="page-left-bar">
+	<a href="{{ "/" | relative_url }}" aria-label="Return to the home page" class="logo-link logo-link-side">
+		<img src="{{ '/assets/brand.svg' | relative_url }}">
+	</a>
+</aside>
+<main id="main" class="page-main">
+	<header class="page-header">
+		<a href="{{ "/" | relative_url }}" aria-label="Return to the home page" class="logo-link logo-link-header">
+			<img src="{{ '/assets/brand.svg' | relative_url }}">
+		</a>
+		<nav class="main-nav">
+			<ul>
+				{%- assign sorted_nav_items = site.pages | where: 'menu','main' | sort: 'weight' -%}
+				{%- for p in sorted_nav_items -%}
+					{%- if p.menu == 'main' -%}
+					<li><a href="{{ p.url }}">{{- p.title -}}</a></li>
+					{%- endif -%}
+				{%- endfor -%}
+			</ul>
+		</nav>
+	</header>
+	{{- content -}}
+</main>
+<!-- <footer class="page-footer">
+	footer
+</footer> -->
