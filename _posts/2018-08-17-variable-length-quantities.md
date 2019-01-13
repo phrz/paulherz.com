@@ -10,13 +10,15 @@ excerpt_separator: <!-- more -->
 {% assign post_assets = 'assets/posts/variable-length-quantities' %}
 
 <figure>
-	<img 
-	src="{{ post_assets 
-		| append: '/piano-roll.png' 
-		| relative_url 
-	}}" 
-	class="pixelated-image"
-	width="200">
+	<div class="no-upscale-image-container" style="background:rgba(255, 37,0,.1);padding:2rem 0">
+		<img 
+		src="{{ post_assets 
+			| append: '/piano-roll-alpha.png' 
+			| relative_url 
+		}}" 
+		class="pixelated-image"
+		width="200">
+	</div><!-- .no-upscale-image-container -->
 	<figcaption>
 		<strong>Image:</strong>
 		MIDI files encode music like the cylinder of a music box. This cylinder contains the beginning of Für Elise.<a href="#c1" name="c1s"><sup>1</sup></a>
@@ -73,6 +75,6 @@ However, *saving space* is not the only benefit of VLQs, although it is a meanin
 
 Then, the only issue is finding a way to store the number if it is beyond the capacity of hardware types, which is easy to do if your language has built-in support for arbitrary-length integers. For example, the `Integer` type in Haskell can be arbitrarily large, whereas `Int` is guaranteed to be a hardware type. In Python 3, all integers are of arbitrary length.
 
-<footer>
+<footer class="footnotes">
 	<a href="#c1s" name="c1"><sup>1</sup></a> Mesh: <a href="https://www.thingiverse.com/thing:552498">shootquin</a>. Rendering/animation: me. License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
 </footer>

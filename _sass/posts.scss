@@ -1,5 +1,5 @@
 .post {
-	p, ul, ol, blockquote, figcaption {
+	p, ul, ol, blockquote, figcaption, .footnotes, h1, h2, h3, h4, h5, h6 {
 		font-family: $article-font;
 	}
 	
@@ -80,8 +80,11 @@
 	}
 
 	.post-title {
+		font-family: $title-font;
+		font-weight: 600;
+
 		font-size: 2.2rem;
-		margin-bottom: 0.8rem;
+		margin: 0 0 0.8rem;
 
 		a {
 			text-decoration: none;
@@ -128,6 +131,19 @@
 		text-decoration: none;
 		padding: 0.6rem 0.75rem;
 		margin: 0.5rem 0 0;
+	}
+
+	// Example:
+	// <footer class="footnotes">
+	// <a href="#c1s" name="c1">
+	// 	<sup>1</sup>
+	// 	</a> Mesh: <a href="a">shootquin</a>. 
+	// 	Rendering/animation: me. 
+	// 	License: <a href="b">CC BY-SA 3.0</a>
+	// </footer>
+	.footnotes {
+		font-size: 0.9rem;
+		margin: 0 0 1rem;
 	}
 }
 
