@@ -12,7 +12,7 @@
 1. Spin up a Ubuntu VM and attach to IP for paulherz.com. Setup ssh certs. Setup `ph` alias on local dev machine.
 2. `curl https://getcaddy.com | bash -s personal`
 3. `apt install git`
-4. `git clone git@github.com:phrz/paulherz.com`
+4. `git clone https://github.com/phrz/paulherz.com.git`
 5. `cd paulherz.com`
 6. `cp Caddyfile ..`
 7. `cp keepup.sh ..`
