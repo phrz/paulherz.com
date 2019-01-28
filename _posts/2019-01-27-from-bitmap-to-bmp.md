@@ -4,6 +4,7 @@ title:  "From bitmap to .bmp"
 date:   2019-01-27 16:00:00 -0600
 author: "Paul Herz"
 categories: snippets
+excerpt_separator: <!-- more -->
 ---
 
 {% assign post_assets = 'assets/posts/from-bitmap-to-bmp' %}
@@ -11,6 +12,8 @@ categories: snippets
 Building images with code is a hobby of mine. In Python, generating images with <a href="https://python-pillow.org">Pillow</a> is very easy. All you have to do is generate the image's bytes and pass it to an Image object.
 
 I wanted to see how this could be done at a very low level in JavaScript. You can use the Canvas and draw one-pixel rectangles, or just use WebGL, but I chose to go lower. Instead, I ended up converting a raw image to a BMP file (think Windows Paint), and displaying it directly within an `<img>` tag. The BMP format seemed like the simplest image format that worked in web browsers.
+
+<!-- more -->
 
 > Quick note: I know this is not anywhere near efficient. It computes the value of every pixel serially on the CPU and stores it in an uncompressed BMP file represented in base64. This is a starting point to learning and demonstrating better ways of doing these, e.g. with WebGL and shaders.
 
