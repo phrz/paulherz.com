@@ -9,7 +9,7 @@ excerpt_separator: <!-- more -->
 
 {% assign post_assets = 'assets/posts/variable-length-quantities' %}
 
-<figure>
+<figure class="feature">
 	<div class="no-upscale-image-container" style="background:rgba(255, 37,0,.1);padding:2rem 0">
 		<img 
 		src="{{ post_assets 
@@ -17,6 +17,8 @@ excerpt_separator: <!-- more -->
 			| relative_url 
 		}}" 
 		class="pixelated-image"
+		style="filter:grayscale();mix-blend-mode:color-burn"
+		id="fis"
 		width="200">
 	</div><!-- .no-upscale-image-container -->
 	<figcaption>

@@ -1,6 +1,17 @@
 .post {
-	p, ul, ol, blockquote, figcaption, .footnotes, h1, h2, h3, h4, h5, h6 {
-		font-family: $article-font;
+
+	font-size: 1rem;
+
+	@include small {
+		font-size: 1.15rem;
+	}
+
+	// p, ul, ol, blockquote, figcaption, .footnotes, h1, h2, h3, h4, h5, h6 {
+	font-family: $article-font;
+	// }
+
+	code {
+		font-size: 0.85em;
 	}
 	
 	p, ul, ol { line-height: 1.4; }
@@ -25,7 +36,7 @@
 
 	/* AESTHETIC */
 
-	a:link {
+	a:link, a:visited {
 		color: $post-link-color;
 	}
 
@@ -37,7 +48,7 @@
 	pre code { background: none; }
 
 	img {
-		width: 100%;
+		max-width: 100%;
 		margin: 0 0 1rem;
 	}
 
@@ -73,6 +84,10 @@
 			font-size: 1.76rem;
 		}
 	}
+
+	.feature {
+		margin-top: 0;
+	}
 	/* END AESTHETIC */
 
 	.post-header {
@@ -87,7 +102,14 @@
 		margin: 0 0 0.8rem;
 
 		a {
-			text-decoration: none;
+			color: $foreground;
+
+			-webkit-text-decoration-color: rgba($vivid-color, 0.75);
+			text-decoration-color: rgba($vivid-color, 0.75);
+
+			-webkit-text-decoration-skip: skip;
+			-webkit-text-decoration-skip: ink;
+			text-decoration-skip: ink;
 		}
 
 		@include small {
@@ -101,6 +123,10 @@
 		@include large {
 			font-size: 4rem;
 		}
+	}
+
+	&.post-partial .post-title {
+		font-weight: 300;
 	}
 
 	.post-meta {
@@ -117,6 +143,8 @@
 	}
 
 	.post-readmore-link {
+		font-family: $ui-font;
+		font-size: 1rem;
 		color: $vivid-color;
 		background-color: $background;
 		border: 1px solid $vivid-color;
@@ -130,7 +158,7 @@
 		display: inline-block;
 		text-decoration: none;
 		padding: 0.6rem 0.75rem;
-		margin: 0.5rem 0 0;
+		margin: 0.75rem 0 0;
 	}
 
 	// Example:

@@ -1,0 +1,94 @@
+---
+# Empty front matter
+---
+
+@import 'global';
+
+body {
+	background: #313437;
+	color: #fff;
+}
+
+.world-homepage {
+	width: 100%;
+	height: 100%;
+
+	a:link, a:visited {
+		color: #fff;
+	}
+
+	.hero-text {
+		font-family: PHRoslindaleDisplayCondensed;
+		font-weight: 300;
+		font-size: 3rem;
+		margin: 2.5rem;
+		line-height: 1.1;
+	}
+
+	.world-hero {
+		margin: 0.5rem 0;
+
+		@include small {
+			margin: 1.5rem 0;
+			justify-content: flex-start;
+		}
+
+		@include medium {
+			margin: 2.6rem 0 1.5rem;
+		}
+
+		padding: 0 $post-pad;
+
+		@include small {
+			padding: 0 $post-pad;
+		}
+
+		@include large {
+			padding: $post-pad $post-pad*4;
+		}
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.world-hero .hero-text {
+		max-width: 8em;
+		margin: 2.5rem 0;
+		padding: 0;
+		line-height: 1;
+
+		@include small {
+			font-size: 4rem;
+			margin: 0 2rem;
+		}
+
+		@include large {
+			font-size: 5rem;
+		}
+	}
+
+	.world-graphic {
+		flex-shrink: 0;
+	}
+
+	#world-graphic-lines {
+		animation: slowSpin 200s infinite;
+		animation-timing-function: linear;
+		transform-origin: 410px 403px; /* (241,289) - (-169,-114) */
+	}
+
+	@keyframes slowSpin {
+		0% {
+			transform: rotateZ(0deg);
+		}
+		100% {
+			transform: rotateZ(360deg);
+		}
+	}
+
+	@include small {
+		.world-hero {
+			flex-direction: row;
+		}
+	}
+}

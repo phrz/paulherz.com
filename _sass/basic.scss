@@ -59,17 +59,32 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
 }
 
+// NOTE
+// HTML 4 DEFAULT SIZES BEGIN
 h1 {
-	margin: 1em 0;
-	font-weight: 400;
+	font-size: 2em; margin: .67em 0;
 }
 
 h2 {
-	margin: 0.83em 0;
+	font-size: 1.5em; margin: .75em 0;
 }
 
+h3 {
+	font-size: 1.17em; margin: .83em 0;
+}
+
+h5 {
+	font-size: .83em; margin: 1.5em 0;
+}
+
+h6 {
+	font-size: .75em; margin: 1.67em 0;
+}
+// HTML 4 DEFAULT SIZES END
+
 mark {
-	background: rgba(yellow, 0.6);
+	// background: rgba(yellow, 0.6);
+	background: rgba($vivid-color, 0.2);
 }
 
 /* END GENERAL HTML */
@@ -160,6 +175,8 @@ mark {
 }
 
 .page-main {
+	flex-grow: 1;
+	max-width: $main-limit;
 	margin: 1rem 0;
 }
 
